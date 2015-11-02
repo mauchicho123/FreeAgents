@@ -1,0 +1,68 @@
+<resources>
+    <string name="app_name">GymBuddy</string>
+    <string name="action_sign_up">Sign Up</string>
+    <string name="firstName">First Name</string>
+    <string name="lastName">Last Name</string>
+    <string name="save">Save</string>
+    <string name="completeRegistration">Complete Registration</string>
+    <string name="dateOfBirth">Date of Birth</string>
+    <string name="gender">Gender</string>
+    <string name="maleGender">Male</string>
+    <string name="femaleGender">Female</string>
+    <string name="welcome">Welcome</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="menu">Menu</string>
+    <string name="editProfile_save">Save</string>
+    <string name="editProfile_cancel">Cancel</string>
+    <string name="about_tab">About</string>
+    <string name="mySports_tab">My Sports</string>
+    <string name="photos_tab">Photos</string>
+    <string name="Username">Username</string>
+    <string name="AddSport">Add Sport</string>
+    <string name="Sport">Sport</string>
+    <string name="availability">Availability</string>
+    <string name="specifySport">Specify Sport</string>
+    <string name="addPosition">Add Position</string>
+    <string name="sport">Sport</string>
+    <string name="position">Position</string>
+    <string name="experience">Experience</string>
+
+    <string-array name="sportNamesArray">
+        <item>Select Sport</item>
+        <item>BasketBall</item>
+        <item>Running</item>
+        <item>Soccer</item>
+        <item>Tennis</item>
+        <item>Weight Lifting</item>
+        <item>Yoga</item>
+    </string-array>
+
+
+    <string-array name="experienceYearsArray">
+        <item>0-1 Year</item>
+        <item>1-2 Years</item>
+        <item>2-5 Years</item>
+        <item>5+ Years</item>
+    </string-array>
+
+    <string-array name="experienceLevelsArray">
+        <item>Beginner</item>
+        <item>Intermediate</item>
+        <item>Advanced</item>
+        <item>Expert</item>
+    </string-array>
+
+    <string-array name="positionSoccerArray">
+        <item>GoalKeeper</item>
+        <item>Left Back</item>
+        <item>Center Back</item>
+        <item>Right Back</item>
+        <item>Defensive Midfielder</item>
+        <item>Attacking Midfielder</item>
+        <item>Winger</item>
+        <item>Forward</item>
+    </string-array>
+
+
+</resources>

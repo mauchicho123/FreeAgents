@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffBE80FF"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
+    android:gravity="center_vertical|center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".AddSportActivity">
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/sportNameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/sportTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sport"
+                android:textSize="20dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+
+            <Spinner
+                android:id="@+id/sportName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="30dp"
+                android:layout_below="@+id/sportTextView"
+                android:ems="18"
+                android:hint="@string/Sport"
+                android:entries="@array/sportNamesArray" />
+
+            <EditText android:id="@+id/otherSport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/specifySport"
+                android:singleLine="true"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/sportName"
+                android:ems="18"
+                android:visibility="invisible" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/positionInSportLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/sportNameLayout">
+
+            <TextView
+                android:id="@+id/positionTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/position"
+                android:textSize="20dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <Spinner
+                android:id="@+id/positionInSport"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/positionTextView"
+                android:ems="18"
+                android:hint="@string/Sport"
+                android:layout_weight="1"
+                android:entries="@array/positionSoccerArray"
+
+               />
+
+
+            <ImageButton
+                android:id="@+id/addPositionButton"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:cropToPadding="true"
+                android:background="@android:color/transparent"
+                android:src="@drawable/add"
+                android:layout_alignParentLeft="@+id/positionInSport"
+                android:contentDescription="@string/addPosition"
+                android:layout_toRightOf="@+id/positionInSport"
+                android:layout_toEndOf="@+id/positionInSport"
+
+                android:layout_alignTop="@+id/positionInSport" />
+
+
+        </RelativeLayout>
+
+
+
+
+        <RelativeLayout
+            android:id="@+id/Spinners"
+            android:layout_width="fill_parent"
+            android:layout_height="80dip"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_below="@+id/positionInSportLayout">
+
+            <TextView
+                android:id="@+id/experienceTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/experience"
+                android:textSize="20dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <Spinner
+                android:id="@+id/yearsSpinner"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:entries="@array/experienceYearsArray"
+                android:layout_below="@+id/experienceTextView"/>
+
+            <Spinner
+                android:id="@+id/experienceSpinner"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+
+                android:entries="@array/experienceLevelsArray"
+                android:layout_below="@+id/experienceTextView"
+                android:layout_toRightOf="@+id/yearsSpinner"
+                android:layout_toEndOf="@+id/yearsSpinner"/>
+
+
+        </RelativeLayout>
+
+      <RelativeLayout
+          android:id="@+id/linearLayout"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/Spinners"
+          android:layout_marginTop="10dp"
+        >
+
+          <TextView
+              android:id="@+id/availabilityTextView"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/availability"
+              android:textSize="20dp"
+              android:layout_alignParentLeft="true"
+              android:layout_alignParentStart="true" />
+
+        <CheckBox
+            android:id="@+id/mondayCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mon"
+            android:layout_below="@+id/availabilityTextView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <CheckBox
+            android:id="@+id/tuesdayCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tue"
+            android:layout_below="@+id/availabilityTextView"
+            android:layout_toRightOf="@+id/mondayCheckBox"
+            android:layout_toEndOf="@+id/mondayCheckBox" />
+
+        <CheckBox
+            android:id="@+id/wednesdayCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wed"
+            android:layout_below="@+id/availabilityTextView"
+            android:layout_toRightOf="@+id/tuesdayCheckBox"
+            android:layout_toEndOf="@+id/tuesdayCheckBox" />
+
+        <CheckBox
+            android:id="@+id/thursdayCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thu"
+            android:layout_below="@+id/availabilityTextView"
+            android:layout_toRightOf="@+id/wednesdayCheckBox"
+            android:layout_toEndOf="@+id/wednesdayCheckBox" />
+
+        <CheckBox
+            android:id="@+id/fridayCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fri"
+            android:layout_below="@+id/availabilityTextView"
+            android:layout_toRightOf="@+id/thursdayCheckBox"
+            android:layout_toEndOf="@+id/thursdayCheckBox" />
+
+        <CheckBox
+            android:id="@+id/satCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sat"
+            android:layout_below="@+id/fridayCheckBox"
+            />
+
+        <CheckBox
+            android:id="@+id/sunCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sun"
+            android:layout_below="@+id/tuesdayCheckBox"
+            android:layout_toRightOf="@+id/satCheckBox"
+            />
+
+      </RelativeLayout>
+
+        <requestFocus />
+
+
+
+        <ProgressBar android:id="@+id/save_changes_to_profile_progress_addSport" style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+
+
+    </RelativeLayout>
+</LinearLayout>

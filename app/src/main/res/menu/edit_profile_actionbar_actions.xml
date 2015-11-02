@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:gymbuddy="http://schemas.android.com/apk/res-auto" >
+
+    <item android:id="@+id/action_save"
+    android:icon="@drawable/done"
+    android:title="@string/editProfile_save"
+    gymbuddy:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/action_cancel"
+        android:icon="@drawable/cancel"
+        android:title="@string/editProfile_cancel"
+        gymbuddy:showAsAction="ifRoom"/>
+
+
+</menu>
