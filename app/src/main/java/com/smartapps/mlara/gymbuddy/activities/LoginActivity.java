@@ -135,17 +135,17 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         View focusView = null;
 
         if (!TextUtils.isEmpty(password) && !isPasswordValid(password)) {
-            passwordTextView.setError(getString(R.string.invalid_password));
+            passwordTextView.setError(Constants.passwordIsTooShort);
             focusView = passwordTextView;
             cancelLogin = true;
         }
 
         if (TextUtils.isEmpty(email)) {
-            emailTextView.setError(getString(R.string.field_required));
+            emailTextView.setError(Constants.fieldRequired);
             focusView = emailTextView;
             cancelLogin = true;
         } else if (!isEmailValid(email)) {
-            emailTextView.setError(getString(R.string.invalid_email));
+            emailTextView.setError(Constants.emailAddressInvalid);
             focusView = emailTextView;
             cancelLogin = true;
         }

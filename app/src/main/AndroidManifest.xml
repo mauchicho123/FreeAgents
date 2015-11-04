@@ -35,8 +35,8 @@
         <activity android:name=".activities.MainMenuActivity"/>
         <activity android:name=".activities.EditProfileActivity"
             android:parentActivityName=".activities.LoginActivity"/>
-        <activity android:name=".activities.AddSportActivity"/>
-
+        <activity android:name=".activities.AddSportActivity"
+            android:parentActivityName=".activities.EditProfileActivity"/>
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
             android:value=".activities.MainMenuActivity"/>

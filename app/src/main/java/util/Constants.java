@@ -9,6 +9,12 @@ import java.util.List;
  */
 public final class Constants {
 
+    //database Parse tables
+    public static final String userTable="User";
+    public static final String pictureTable="Picture";
+    public static final String sportTable="Sport";
+
+
     //database keywords
     //user table
     public static final String firstLogin="firstLogin";
@@ -24,10 +30,14 @@ public final class Constants {
     public static final String isItMainProfilePicture="isItMainProfilePic";
     public static final String description="pictureDescription";
 
+    //sport Table
+    public static final String sportName="sportName";
+    public static final String yearsOfExperience="yearsOfExperience";
+    public static final String levelOfExpertise="levelOfExpertise";
 
-    //database Parse tables
-    public static final String userTable="USER";
-    public static final String pictureTable="Picture";
+
+
+
 
 
     //util constants
@@ -39,6 +49,7 @@ public final class Constants {
     public static final String year="year";
     public static final String month="month";
     public static final String day="day";
+
 
 
     //menu items
@@ -57,4 +68,15 @@ public final class Constants {
 
     //add sport constants
     public static final String addSport="Add Sport";
+    public static final String otherSport="Other";
+    public static final String soccer="Soccer";
+    public static final String baseball="Baseball";
+    public static final String selectSport="Select Sport";
+    public static final String addPosition="Add Position";
+
+
+    //error messages
+    public static final String passwordIsTooShort="Password is too Short";
+    public static final String fieldRequired="This field is required";
+    public static final String emailAddressInvalid="This email address is invalid";
 }

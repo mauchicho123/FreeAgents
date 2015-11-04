@@ -26,16 +26,21 @@
     <string name="addPosition">Add Position</string>
     <string name="sport">Sport</string>
     <string name="position">Position</string>
+    <string name="selectPosition">Add Position</string>
     <string name="experience">Experience</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
+    <string name="baseball">Baseball</string>
 
     <string-array name="sportNamesArray">
         <item>Select Sport</item>
-        <item>BasketBall</item>
+        <item>Baseball</item>
         <item>Running</item>
         <item>Soccer</item>
         <item>Tennis</item>
         <item>Weight Lifting</item>
         <item>Yoga</item>
+        <item>Other</item>
     </string-array>
 
 
@@ -64,5 +69,17 @@
         <item>Forward</item>
     </string-array>
 
+
+    <string-array name="positionBaseballArray">
+        <item>Catcher</item>
+        <item>Pitcher</item>
+        <item>1B</item>
+        <item>2B</item>
+        <item>3B</item>
+        <item>SS</item>
+        <item>Lf</item>
+        <item>Cf</item>
+        <item>Rf</item>
+    </string-array>
 
 </resources>
