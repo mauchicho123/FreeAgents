@@ -1,6 +1,7 @@
 package com.smartapps.mlara.gymbuddy.activities;
 
 import android.app.AlertDialog;
+import android.app.FragmentManager;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.res.Resources;
@@ -239,7 +240,7 @@ public class AddSportActivity extends ActionBarActivity {
                                     sportToBeAdded.put(Constants.sportName,sportNameSpinner.getSelectedItem().toString());
                                     sportToBeAdded.put(Constants.levelOfExpertise,levelOfExpertiseSpinner.getSelectedItem().toString());
                                     sportToBeAdded.put(Constants.yearsOfExperience, yearsOfExperienceSpinner.getSelectedItem().toString());
-                                    //sportToBeAdded.saveInBackground();
+                                    sportToBeAdded.saveInBackground();
 
                                     //saving the position for that sport if a position has been added to the text view
                                     if(!TextUtils.equals(positionInSportEditText.getText().toString(),Constants.addPosition)){
@@ -247,11 +248,57 @@ public class AddSportActivity extends ActionBarActivity {
                                         String[]positionsArray=positionInSportEditText.getText().toString().trim().split(",");
                                         Log.v("CHECK","positionInSportEditText is "+positionInSportEditText.getText().toString().trim());
                                         for (int k=0;k<positionsArray.length;k++){
-                                            Log.v("CHECK","Position at index " + k + " is " + positionsArray[k].trim());
+                                            Log.v("CHECK", "Position at index " + k + " is " + positionsArray[k].trim());
+                                            ParseObject positionToBeAdded=new ParseObject(Constants.positionTable);
+                                            positionToBeAdded.put(Constants.userName,currentUser.getUsername());
+                                            positionToBeAdded.put(Constants.sportName,sportNameSpinner.getSelectedItem().toString());
+                                            if(Constants.soccerPositionShortDescriptionMap.containsKey(sportNameSpinner.getSelectedItem().toString())){
+                                                positionToBeAdded.put(Constants.positionShortDescription,Constants.soccerPositionShortDescriptionMap.get(sportNameSpinner.getSelectedItem().toString()));
+                                            }
+                                            positionToBeAdded.put(Constants.position,positionsArray[k].trim());
+                                            positionToBeAdded.saveInBackground();
                                         }
                                     }
-                                    //go back to sport list
 
+                                    //saving the availability of the sport if the user selected any days
+                                     if(mondayCheckBox.isChecked() || tuesdayCheckBox.isChecked() || wednesdayCheckBox.isChecked() || thursdayCheckBox.isChecked() || fridayCheckBox.isChecked()
+                                             || saturdayCheckBox.isChecked() || sundayCheckBox.isChecked()) {
+                                         ParseObject availabilityToBeAdded = new ParseObject(Constants.availabilityTable);
+                                         availabilityToBeAdded.put(Constants.userName, currentUser.getUsername());
+                                         availabilityToBeAdded.put(Constants.sportName, sportNameSpinner.getSelectedItem().toString());
+                                         if(mondayCheckBox.isChecked()){
+                                             availabilityToBeAdded.put(Constants.monday,true);
+                                         }
+                                         if(tuesdayCheckBox.isChecked()){
+                                             availabilityToBeAdded.put(Constants.tuesday,true);
+                                         }
+                                         if(wednesdayCheckBox.isChecked()){
+                                             availabilityToBeAdded.put(Constants.wednesday,true);
+                                         }
+                                         if(thursdayCheckBox.isChecked()){
+                                             availabilityToBeAdded.put(Constants.thursday,true);
+                                         }
+                                         if(fridayCheckBox.isChecked()){
+                                             availabilityToBeAdded.put(Constants.friday,true);
+                                         }
+                                         if(saturdayCheckBox.isChecked()){
+                                             availabilityToBeAdded.put(Constants.saturday,true);
+                                         }
+                                         if(sundayCheckBox.isChecked()) {
+                                             availabilityToBeAdded.put(Constants.sunday, true);
+                                         }
+                                         availabilityToBeAdded.saveInBackground();
+                                      }
+
+                                    FragmentManager fm = getFragmentManager();
+                                    if (fm.getBackStackEntryCount() > 0) {
+                                        Log.i("MainActivity", "popping backstack");
+                                        fm.popBackStack();
+                                    } else {
+                                        Log.i("MainActivity", "nothing on backstack, calling super");
+                                        //super.onBackPressed();
+                                    }
+                                    //go back to sport list refreshing the list with the one created.
                                 }
                             }
                         } catch (Exception e) {

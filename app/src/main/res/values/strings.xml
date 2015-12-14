@@ -35,6 +35,7 @@
     <string-array name="sportNamesArray">
         <item>Select Sport</item>
         <item>Baseball</item>
+        <item>Basketball</item>
         <item>Running</item>
         <item>Soccer</item>
         <item>Tennis</item>

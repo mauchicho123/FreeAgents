@@ -31,7 +31,8 @@
                 android:text="@string/sport"
                 android:textSize="20dp"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"
+                android:paddingTop="10dp" />
 
 
             <Spinner
@@ -43,7 +44,8 @@
                 android:layout_below="@+id/sportTextView"
                 android:ems="18"
                 android:hint="@string/Sport"
-                android:entries="@array/sportNamesArray" />
+                android:entries="@array/sportNamesArray"
+                android:paddingTop="10dp" />
 
             <EditText android:id="@+id/otherSport"
                 android:layout_width="match_parent"
@@ -109,10 +111,11 @@
         <RelativeLayout
             android:id="@+id/Spinners"
             android:layout_width="fill_parent"
-            android:layout_height="80dip"
+            android:layout_height="100dip"
             android:orientation="horizontal"
             android:weightSum="2"
-            android:layout_below="@+id/positionInSportLayout">
+            android:layout_below="@+id/positionInSportLayout"
+            android:paddingTop="20dp">
 
             <TextView
                 android:id="@+id/experienceTextView"
