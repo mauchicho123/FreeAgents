@@ -33,6 +33,7 @@
         <activity android:name=".activities.SignUpActivity" />
         <activity android:name=".activities.CompleteRegistrationActivity" />
         <activity android:name=".activities.MainMenuActivity"/>
+        <activity android:name=".activities.EditSportActivity"/>
         <activity android:name=".activities.EditProfileActivity"
             android:parentActivityName=".activities.LoginActivity"/>
         <activity android:name=".activities.AddSportActivity"

@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -18,6 +19,7 @@ import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.smartapps.mlara.gymbuddy.R;
 import com.smartapps.mlara.gymbuddy.activities.AddSportActivity;
+import com.smartapps.mlara.gymbuddy.activities.EditSportActivity;
 import com.smartapps.mlara.gymbuddy.adapters.MySportListAdapter;
 import com.smartapps.mlara.gymbuddy.pojos.Sport;
 
@@ -30,7 +32,7 @@ import util.Constants;
 /**
  * Created by mlara on 10/8/2015.
  */
-public class ProfileTabMySportsFragment extends Fragment {
+public class ProfileTabMySportsFragment extends Fragment{
 
     private Button addSportButton;
     private ListView listOfSportsView;
@@ -85,8 +87,41 @@ public class ProfileTabMySportsFragment extends Fragment {
             }
         });
 
-        Log.v("CHECK", "About to set the adapter");
 
+/*       listOfSportsView.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+           @Override
+           public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+               //Intent intent =new Intent(context, EditSportActivity.class);
+
+               Sport sport = (Sport) listOfSportsView.getItemAtPosition(position);
+               String sportSelectedName = sport.getSportName();
+               Toast.makeText(context,
+                       "The sport selected is " + sportSelectedName,
+                       Toast.LENGTH_LONG).show();
+
+           }
+
+           @Override
+           public void onNothingSelected(AdapterView<?> parent) {
+
+           }
+       });*/
+
+        listOfSportsView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Sport sport = (Sport) listOfSportsView.getItemAtPosition(position);
+                Intent intent =new Intent(context, EditSportActivity.class);
+                intent.putExtra(Constants.selectedSport,sport.getSportName());
+                startActivity(intent);
+                //String sportSelectedName = sport.getSportName();
+               // Log.v("CHECK","Inside OnItemClick of list with sport "+sportSelectedName);
+              /*  Toast.makeText(context,
+                        "The sport selected is " + sportSelectedName,
+                        Toast.LENGTH_LONG).show();*/
+
+            }
+        });
         return view;
     }
 
@@ -175,4 +210,5 @@ public class ProfileTabMySportsFragment extends Fragment {
             Log.v("CHECK", "sport at position i is" + (String) sportList.get(i).getSportName());
         }
     }
+
 }

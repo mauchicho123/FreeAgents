@@ -3,7 +3,7 @@
     android:layout_height="fill_parent"
     android:orientation="vertical">
     <ListView
-        android:paddingTop="5dp"
+
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="1"

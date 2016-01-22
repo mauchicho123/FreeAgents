@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -38,7 +37,7 @@ public class MySportListAdapter extends ArrayAdapter<Sport> {
         Log.v("CHECK", " Inside MySportListAdapter getView");
         convertView = (RelativeLayout) inflater.inflate( resource, null );
         Sport sport= getItem( position );
-        TextView sportName = (TextView) convertView.findViewById(R.id.sportName);
+        TextView sportName = (TextView) convertView.findViewById(R.id.editSportName);
         sportName.setText(sport.getSportName());
 
         TextView levelOfExpertise = (TextView) convertView.findViewById(R.id.levelOfExpertise);
@@ -50,11 +49,11 @@ public class MySportListAdapter extends ArrayAdapter<Sport> {
         Drawable image = context.getResources().getDrawable(imageResource);
         sportImage.setImageDrawable(image);
 
-        ImageButton trashCanButton = (ImageButton) convertView.findViewById(R.id.deleteSport);
+        /*ImageButton trashCanButton = (ImageButton) convertView.findViewById(R.id.deleteSport);
         uri = "drawable/trashcan";
         imageResource = context.getResources().getIdentifier(uri, null, context.getPackageName());
         image = context.getResources().getDrawable(imageResource);
-        trashCanButton.setImageDrawable(image);
+        trashCanButton.setImageDrawable(image);*/
         return convertView;
     }
 }

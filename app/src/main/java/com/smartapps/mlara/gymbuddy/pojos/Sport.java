@@ -1,11 +1,13 @@
 package com.smartapps.mlara.gymbuddy.pojos;
 
+import android.os.Parcel;
+
 import java.util.ArrayList;
 
 /**
  * Created by mlara on 11/5/2015.
  */
-public class Sport {
+public class Sport  {
 
     private String username;
     private String sportName;
@@ -15,12 +17,21 @@ public class Sport {
     private ArrayList<String> positions;
     private String sportImageName;
 
-    public Sport(String userName, String sportName, String yearsOfExperience, String levelOfExpertise ){
+    public Sport(String userName, String sportName, String yearsOfExperience, String levelOfExpertise  )  {
         this.username=userName;
         this.sportName=sportName;
         this.yearsOfExperience=yearsOfExperience;
         this.levelOfExpertise=levelOfExpertise;
         positions=new ArrayList<String>();
+
+    }
+
+    private Sport(Parcel in) {
+        username = in.readString();
+        sportName = in.readString();
+        yearsOfExperience= in.readString();
+        levelOfExpertise=in.readString();
+
 
     }
 
@@ -79,4 +90,35 @@ public class Sport {
     public void setSportImage(String sportImage) {
         this.sportImageName = sportImage;
     }
+
+//    @Override
+//    public int describeContents() {
+//        return 0;
+//    }
+
+
+
+
+/*
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+       dest.writeString(username);
+       dest.writeString(sportName);
+       dest.writeString(yearsOfExperience);
+       dest.writeString(levelOfExpertise);
+       dest.writeStringList(positions);
+    }
+
+    // Creator
+    public static final Parcelable.Creator<Sport> CREATOR
+            = new Parcelable.Creator<Sport>() {
+        public Sport createFromParcel(Parcel in) {
+            return new Sport(in);
+        }
+
+        public Sport[] newArray(int size) {
+            return new Sport[size];
+        }
+    };*/
+
 }

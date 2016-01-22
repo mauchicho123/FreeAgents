@@ -25,7 +25,7 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/sportTextView"
+                android:id="@+id/editSportTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sport"
@@ -36,12 +36,12 @@
 
 
             <Spinner
-                android:id="@+id/sportName"
+                android:id="@+id/editSportName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="30dp"
-                android:layout_below="@+id/sportTextView"
+                android:layout_below="@+id/editSportTextView"
                 android:ems="18"
                 android:hint="@string/Sport"
                 android:entries="@array/sportNamesArray"
@@ -53,21 +53,21 @@
                 android:hint="@string/specifySport"
                 android:singleLine="true"
                 android:layout_centerHorizontal="true"
-                android:layout_below="@+id/sportName"
+                android:layout_below="@+id/editSportName"
                 android:ems="18"
                 android:visibility="invisible" />
 
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/positionInSportLayout"
+            android:id="@+id/editPositionInSportLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_below="@+id/sportNameLayout">
 
             <TextView
-                android:id="@+id/positionTextView"
+                android:id="@+id/editPositionTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/position"
@@ -76,10 +76,10 @@
                 android:layout_alignParentStart="true" />
 
             <EditText
-                android:id="@+id/positionInSport"
+                android:id="@+id/editPositionInSport"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/positionTextView"
+                android:layout_below="@+id/editPositionTextView"
                 android:ems="18"
                 android:hint="@string/selectPosition"
                 android:layout_weight="1"
@@ -89,18 +89,18 @@
 
 
             <ImageButton
-                android:id="@+id/addPositionButton"
+                android:id="@+id/editAddPositionButton"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:cropToPadding="true"
                 android:background="@android:color/transparent"
                 android:src="@drawable/add"
-                android:layout_alignParentLeft="@+id/positionInSport"
+                android:layout_alignParentLeft="@+id/editPositionInSport"
                 android:contentDescription="@string/addPosition"
-                android:layout_toRightOf="@+id/positionInSport"
-                android:layout_toEndOf="@+id/positionInSport"
+                android:layout_toRightOf="@+id/editPositionInSport"
+                android:layout_toEndOf="@+id/editPositionInSport"
 
-                android:layout_alignTop="@+id/positionInSport" />
+                android:layout_alignTop="@+id/editPositionInSport" />
 
 
         </RelativeLayout>
@@ -109,16 +109,16 @@
 
 
         <RelativeLayout
-            android:id="@+id/Spinners"
+            android:id="@+id/editSportSpinners"
             android:layout_width="fill_parent"
             android:layout_height="100dip"
             android:orientation="horizontal"
             android:weightSum="2"
-            android:layout_below="@+id/positionInSportLayout"
+            android:layout_below="@+id/editPositionInSportLayout"
             android:paddingTop="20dp">
 
             <TextView
-                android:id="@+id/experienceTextView"
+                android:id="@+id/editSportExperienceTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/experience"
@@ -127,21 +127,21 @@
                 android:layout_alignParentStart="true" />
 
             <Spinner
-                android:id="@+id/yearsSpinner"
+                android:id="@+id/editSportYearsSpinner"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:entries="@array/experienceYearsArray"
-                android:layout_below="@+id/experienceTextView"/>
+                android:layout_below="@+id/editSportExperienceTextView"/>
 
             <Spinner
-                android:id="@+id/experienceSpinner"
+                android:id="@+id/editSportExperienceSpinner"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
 
                 android:entries="@array/experienceLevelsArray"
-                android:layout_below="@+id/experienceTextView"
-                android:layout_toRightOf="@+id/yearsSpinner"
-                android:layout_toEndOf="@+id/yearsSpinner"/>
+                android:layout_below="@+id/editSportExperienceTextView"
+                android:layout_toRightOf="@+id/editSportYearsSpinner"
+                android:layout_toEndOf="@+id/editSportYearsSpinner"/>
 
 
         </RelativeLayout>
@@ -150,12 +150,12 @@
           android:id="@+id/linearLayout"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:layout_below="@+id/Spinners"
+          android:layout_below="@+id/editSportSpinners"
           android:layout_marginTop="10dp"
         >
 
           <TextView
-              android:id="@+id/availabilityTextView"
+              android:id="@+id/editSportAvailabilityTextView"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:text="@string/availability"
@@ -164,65 +164,65 @@
               android:layout_alignParentStart="true" />
 
         <CheckBox
-            android:id="@+id/mondayCheckBox"
+            android:id="@+id/editSportMondayCheckBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Mon"
-            android:layout_below="@+id/availabilityTextView"
+            android:layout_below="@+id/editSportAvailabilityTextView"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
         <CheckBox
-            android:id="@+id/tuesdayCheckBox"
+            android:id="@+id/editSportTuesdayCheckBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tue"
-            android:layout_below="@+id/availabilityTextView"
-            android:layout_toRightOf="@+id/mondayCheckBox"
-            android:layout_toEndOf="@+id/mondayCheckBox" />
+            android:layout_below="@+id/editSportAvailabilityTextView"
+            android:layout_toRightOf="@+id/editSportMondayCheckBox"
+            android:layout_toEndOf="@+id/editSportMondayCheckBox" />
 
         <CheckBox
-            android:id="@+id/wednesdayCheckBox"
+            android:id="@+id/editSportWednesdayCheckBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Wed"
-            android:layout_below="@+id/availabilityTextView"
-            android:layout_toRightOf="@+id/tuesdayCheckBox"
-            android:layout_toEndOf="@+id/tuesdayCheckBox" />
+            android:layout_below="@+id/editSportAvailabilityTextView"
+            android:layout_toRightOf="@+id/editSportTuesdayCheckBox"
+            android:layout_toEndOf="@+id/editSportTuesdayCheckBox" />
 
         <CheckBox
-            android:id="@+id/thursdayCheckBox"
+            android:id="@+id/editSportThursdayCheckBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Thu"
-            android:layout_below="@+id/availabilityTextView"
-            android:layout_toRightOf="@+id/wednesdayCheckBox"
-            android:layout_toEndOf="@+id/wednesdayCheckBox" />
+            android:layout_below="@+id/editSportAvailabilityTextView"
+            android:layout_toRightOf="@+id/editSportWednesdayCheckBox"
+            android:layout_toEndOf="@+id/editSportWednesdayCheckBox" />
 
         <CheckBox
-            android:id="@+id/fridayCheckBox"
+            android:id="@+id/editSportFridayCheckBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Fri"
-            android:layout_below="@+id/availabilityTextView"
-            android:layout_toRightOf="@+id/thursdayCheckBox"
-            android:layout_toEndOf="@+id/thursdayCheckBox" />
+            android:layout_below="@+id/editSportAvailabilityTextView"
+            android:layout_toRightOf="@+id/editSportThursdayCheckBox"
+            android:layout_toEndOf="@+id/editSportThursdayCheckBox" />
 
         <CheckBox
-            android:id="@+id/satCheckBox"
+            android:id="@+id/editSportSatCheckBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sat"
-            android:layout_below="@+id/fridayCheckBox"
+            android:layout_below="@+id/editSportFridayCheckBox"
             />
 
         <CheckBox
-            android:id="@+id/sunCheckBox"
+            android:id="@+id/editSportSunCheckBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sun"
-            android:layout_below="@+id/tuesdayCheckBox"
-            android:layout_toRightOf="@+id/satCheckBox"
+            android:layout_below="@+id/editSportTuesdayCheckBox"
+            android:layout_toRightOf="@+id/editSportSatCheckBox"
             />
 
       </RelativeLayout>
@@ -231,7 +231,7 @@
 
 
 
-        <ProgressBar android:id="@+id/save_changes_to_profile_progress_addSport" style="?android:attr/progressBarStyleLarge"
+        <ProgressBar android:id="@+id/save_changes_to_profile_progress_EditSport" style="?android:attr/progressBarStyleLarge"
             android:layout_width="wrap_content" android:layout_height="wrap_content"
             android:visibility="gone" />
 

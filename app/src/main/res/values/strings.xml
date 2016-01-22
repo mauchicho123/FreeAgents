@@ -20,6 +20,7 @@
     <string name="photos_tab">Photos</string>
     <string name="Username">Username</string>
     <string name="AddSport">Add Sport</string>
+    <string name="DeleteSport">Delete Sport</string>
     <string name="Sport">Sport</string>
     <string name="availability">Availability</string>
     <string name="specifySport">Specify Sport</string>

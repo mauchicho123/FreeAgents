@@ -11,6 +11,7 @@ import android.graphics.Rect;
 import java.io.ByteArrayOutputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
@@ -79,9 +80,21 @@ public class Utilities {
     }
 
     public static Bitmap bytesToBitMap(byte[] bytes){
-        Bitmap bitMap= BitmapFactory.decodeByteArray(bytes,0,bytes.length);
+        Bitmap bitMap= BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
         return bitMap;
     }
 
-
+    //finds the indexes in the array of positions that the user had already chosen
+    public static ArrayList<Integer> convertPositionNamesToPositionIndexesInResourcesArray(ArrayList<String> positionsFromDatabase, String[] allPositionsOfSport){
+        ArrayList<Integer> positionsOutput=new ArrayList<>();
+       for (int i=0;i<positionsFromDatabase.size();i++){
+           String positionNameFromDatabase=positionsFromDatabase.get(i);
+           for ( int j=0;j<allPositionsOfSport.length;j++){
+               if(positionNameFromDatabase.equals(allPositionsOfSport[j])){
+                   positionsOutput.add(j);
+               }
+           }
+       }
+        return positionsOutput;
+    }
 }

@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="#ffBE80FF"
+android:descendantFocusability="beforeDescendants"
+android:focusableInTouchMode="true"
+android:gravity="center_vertical|center_horizontal"
+android:orientation="vertical"
+android:paddingBottom="@dimen/activity_vertical_margin"
+android:paddingLeft="@dimen/activity_horizontal_margin"
+android:paddingRight="@dimen/activity_horizontal_margin"
+android:paddingTop="@dimen/activity_vertical_margin"
+tools:context=".EditSportActivity">
+
+<RelativeLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1">
+
+    <RelativeLayout
+        android:id="@+id/editSportNameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp">
+
+        <TextView
+            android:id="@+id/editSportTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sport"
+            android:textSize="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:paddingTop="10dp"
+            android:phoneNumber="false"
+            android:textStyle="bold" />
+
+
+     <!--   <TextView
+            android:id="@+id/editSportName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="30dp"
+            android:layout_below="@+id/editSportTextView"
+            android:ems="18"
+            android:hint="@string/Sport"
+            android:clickable="false"
+            android:paddingTop="20dp"
+            android:layout_marginBottom="15dp"
+            android:enabled="false"
+            android:paddingBottom="10dp" />
+-->
+       <!-- <EditText android:id="@+id/otherSport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/specifySport"
+            android:singleLine="true"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/editSportName"
+            android:ems="18"
+            android:visibility="invisible" />-->
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/editPositionInSportLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/editSportNameLayout">
+
+        <TextView
+            android:id="@+id/editPositionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/position"
+            android:textSize="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:id="@+id/editPositionInSport"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editPositionTextView"
+            android:ems="18"
+            android:hint="@string/selectPosition"
+            android:layout_weight="1"
+            android:enabled="false"
+
+            android:textColor="@android:color/white" />
+
+
+        <ImageButton
+            android:id="@+id/editAddPositionButton"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:cropToPadding="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/add"
+            android:layout_alignParentLeft="@+id/editPositionInSport"
+            android:contentDescription="@string/addPosition"
+            android:layout_toRightOf="@+id/editPositionInSport"
+            android:layout_toEndOf="@+id/editPositionInSport"
+
+            android:layout_alignTop="@+id/editPositionInSport" />
+
+
+    </RelativeLayout>
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/editSportSpinners"
+        android:layout_width="fill_parent"
+        android:layout_height="100dip"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_below="@+id/editPositionInSportLayout"
+        android:paddingTop="20dp">
+
+        <TextView
+            android:id="@+id/editSportExperienceTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/experience"
+            android:textSize="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <Spinner
+            android:id="@+id/editSportYearsSpinner"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:entries="@array/experienceYearsArray"
+            android:layout_below="@+id/editSportExperienceTextView"/>
+
+        <Spinner
+            android:id="@+id/editSportExperienceSpinner"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+
+            android:entries="@array/experienceLevelsArray"
+            android:layout_below="@+id/editSportExperienceTextView"
+            android:layout_toRightOf="@+id/editSportYearsSpinner"
+            android:layout_toEndOf="@+id/editSportYearsSpinner"/>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editSportSpinners"
+        android:layout_marginTop="10dp"
+        >
+
+        <TextView
+            android:id="@+id/editSportAvailabilityTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/availability"
+            android:textSize="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <CheckBox
+            android:id="@+id/editSportMondayCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mon"
+            android:layout_below="@+id/editSportAvailabilityTextView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <CheckBox
+            android:id="@+id/editSportTuesdayCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tue"
+            android:layout_below="@+id/editSportAvailabilityTextView"
+            android:layout_toRightOf="@+id/editSportMondayCheckBox"
+            android:layout_toEndOf="@+id/editSportMondayCheckBox" />
+
+        <CheckBox
+            android:id="@+id/editSportWednesdayCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wed"
+            android:layout_below="@+id/editSportAvailabilityTextView"
+            android:layout_toRightOf="@+id/editSportTuesdayCheckBox"
+            android:layout_toEndOf="@+id/editSportTuesdayCheckBox" />
+
+        <CheckBox
+            android:id="@+id/editSportThursdayCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thu"
+            android:layout_below="@+id/editSportAvailabilityTextView"
+            android:layout_toRightOf="@+id/editSportWednesdayCheckBox"
+            android:layout_toEndOf="@+id/editSportWednesdayCheckBox" />
+
+        <CheckBox
+            android:id="@+id/editSportFridayCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fri"
+            android:layout_below="@+id/editSportAvailabilityTextView"
+            android:layout_toRightOf="@+id/editSportThursdayCheckBox"
+            android:layout_toEndOf="@+id/editSportThursdayCheckBox" />
+
+        <CheckBox
+            android:id="@+id/editSportSatCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sat"
+            android:layout_below="@+id/editSportFridayCheckBox"
+            />
+
+        <CheckBox
+            android:id="@+id/editSportSunCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sun"
+            android:layout_below="@+id/editSportTuesdayCheckBox"
+            android:layout_toRightOf="@+id/editSportSatCheckBox"
+            />
+
+    </RelativeLayout>
+
+    <requestFocus />
+
+
+
+    <ProgressBar android:id="@+id/save_changes_to_profile_progress_EditSport" style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+
+
+</RelativeLayout>
+
+    <Button style="?android:textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:textStyle="bold"
+        android:textColor="#ffffffff"
+        android:background="#ff7e51c2"
+        android:id="@+id/deleteSportButton"
+        android:text="@string/DeleteSport" />
+</LinearLayout>

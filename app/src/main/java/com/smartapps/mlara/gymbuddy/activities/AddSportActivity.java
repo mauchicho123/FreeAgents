@@ -55,14 +55,14 @@ public class AddSportActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_sport);
         cancelSportSave = false;
-        positionInSportEditText = (EditText) findViewById(R.id.positionInSport);
+        positionInSportEditText = (EditText) findViewById(R.id.editPositionInSport);
         mSelectedItems = new ArrayList();
         checkedPositionValues=new boolean[0];
-        sportNameSpinner = (Spinner) findViewById(R.id.sportName);
-        yearsOfExperienceSpinner = (Spinner) findViewById(R.id.yearsSpinner);
-        levelOfExpertiseSpinner = (Spinner) findViewById(R.id.experienceSpinner);
+        sportNameSpinner = (Spinner) findViewById(R.id.editSportName);
+        yearsOfExperienceSpinner = (Spinner) findViewById(R.id.editSportYearsSpinner);
+        levelOfExpertiseSpinner = (Spinner) findViewById(R.id.editSportExperienceSpinner);
         otherSportEditText = (EditText) findViewById(R.id.otherSport);
-        addPositionButton = (ImageButton) findViewById(R.id.addPositionButton);
+        addPositionButton = (ImageButton) findViewById(R.id.editAddPositionButton);
         Resources resources = getResources();
         positionsInSoccer = resources.getStringArray(R.array.positionSoccerArray);
         positionsInBaseball = resources.getStringArray(R.array.positionBaseballArray);
@@ -196,13 +196,13 @@ public class AddSportActivity extends ActionBarActivity {
         progressDialog.setCancelable(false);
 
         //availability
-        mondayCheckBox = (CheckBox) findViewById(R.id.mondayCheckBox);
-        tuesdayCheckBox = (CheckBox) findViewById(R.id.tuesdayCheckBox);
-        wednesdayCheckBox = (CheckBox) findViewById(R.id.wednesdayCheckBox);
-        thursdayCheckBox = (CheckBox) findViewById(R.id.thursdayCheckBox);
-        fridayCheckBox = (CheckBox) findViewById(R.id.fridayCheckBox);
-        saturdayCheckBox = (CheckBox) findViewById(R.id.satCheckBox);
-        sundayCheckBox = (CheckBox) findViewById(R.id.sunCheckBox);
+        mondayCheckBox = (CheckBox) findViewById(R.id.editSportMondayCheckBox);
+        tuesdayCheckBox = (CheckBox) findViewById(R.id.editSportTuesdayCheckBox);
+        wednesdayCheckBox = (CheckBox) findViewById(R.id.editSportWednesdayCheckBox);
+        thursdayCheckBox = (CheckBox) findViewById(R.id.editSportThursdayCheckBox);
+        fridayCheckBox = (CheckBox) findViewById(R.id.editSportFridayCheckBox);
+        saturdayCheckBox = (CheckBox) findViewById(R.id.editSportSatCheckBox);
+        sundayCheckBox = (CheckBox) findViewById(R.id.editSportSunCheckBox);
 
 
     }
@@ -298,6 +298,9 @@ public class AddSportActivity extends ActionBarActivity {
                                         Log.i("MainActivity", "nothing on backstack, calling super");
                                         //super.onBackPressed();
                                     }
+
+                                  //  AddSportActivity.this.startActivity(new Intent(AddSportActivity.this, EditProfileActivity.class));
+
                                     //go back to sport list refreshing the list with the one created.
                                 }
                             }

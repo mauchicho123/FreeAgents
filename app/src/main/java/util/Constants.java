@@ -89,7 +89,7 @@ public final class Constants {
     public static final String baseball="Baseball";
     public static final String selectSport="Select Sport";
     public static final String addPosition="Add Position";
-
+    public static final String selectedSport="Selected Sport";
 
     //error messages
     public static final String passwordIsTooShort="Password is too Short";
